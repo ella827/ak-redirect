@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    const links = [
+      "https://chat.whatsapp.com/GBxfz7S49EVB4qogaNiAB8",
+      "https://chat.whatsapp.com/JVNmUBQFfIMBm4o0SkRnXi
+",
+      "https://chat.whatsapp.com/CrToCriQmZAIHgFgUnz8wT"
+    ];
+    const index = localStorage.getItem("wa_index") || 0;
+    const nextIndex = (parseInt(index) + 1) % links.length;
+    localStorage.setItem("wa_index", nextIndex);
+    window.location.href = links[index];
+  </script>
+</head>
+<body>
+  <p>Redirecting, please wait...</p>
+</body>
+</html>
