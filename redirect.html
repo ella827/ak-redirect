@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Redirecting...</title>
-  <script>
-    const links = [
-      "https://chat.whatsapp.com/GBxFz549EVB4q0gNaIA8B",
-      "https://chat.whatsapp.com/JVMmUBQfFIMb40oSkRnXi",
-      "https://chat.whatsapp.com/CrToCrjQmZAIHgfBUnz8wT"
-    ];
-    const index = localStorage.getItem("wa_index") || 0;
-    const nextIndex = (parseInt(index) + 1) % links.length;
-    localStorage.setItem("wa_index", nextIndex);
+<a id="join-link" href="#">点击进入 WhatsApp 群</a>
+<script>
+  const links = [
+    "https://chat.whatsapp.com/GBxFz549EVB4q0gNaIA8B",
+    "https://chat.whatsapp.com/JVMmUBQfFIMb40oSkRnXi",
+    "https://chat.whatsapp.com/CrToCrjQmZAIHgfBUnz8wT"
+  ];
+  const index = localStorage.getItem("wa_index") || 0;
+  const nextIndex = (parseInt(index) + 1) % links.length;
+  localStorage.setItem("wa_index", nextIndex);
 
-    // 延迟 1.5 秒后跳转
-    setTimeout(() => {
-      window.location.href = links[index];
-    }, 1500);
-  </script>
-</head>
-<body>
-  <p>Redirecting to WhatsApp group... Please wait.</p>
-</body>
-</html>
+  document.getElementById("join-link").href = links[index];
+</script>
