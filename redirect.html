@@ -1,13 +1,24 @@
-<a id="join-link" href="#">点击进入 WhatsApp 群</a>
-<script>
-  const links = [
-    "https://wa.me/2347072931981",
-    "https://wa.me/2348136422608",
-    "https://wa.me/2349013089827"
-  ];
-  const index = localStorage.getItem("wa_index") || 0;
-  const nextIndex = (parseInt(index) + 1) % links.length;
-  localStorage.setItem("wa_index", nextIndex);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Connecting to WhatsApp...</title>
+  <script>
+    const links = [
+      "https://wa.me/2347072931981",
+      "https://wa.me/2348136422608",
+      "https://wa.me/2349013089827"
+    ];
+    const index = localStorage.getItem("wa_index") || 0;
+    const nextIndex = (parseInt(index) + 1) % links.length;
+    localStorage.setItem("wa_index", nextIndex);
 
-  document.getElementById("join-link").href = links[index];
-</script>
+    setTimeout(() => {
+      window.location.href = links[index];
+    }, 1500);
+  </script>
+</head>
+<body>
+  <p>正在连接客服，请稍候...</p>
+</body>
+</html>
