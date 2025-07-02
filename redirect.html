@@ -12,10 +12,14 @@
     const index = localStorage.getItem("wa_index") || 0;
     const nextIndex = (parseInt(index) + 1) % links.length;
     localStorage.setItem("wa_index", nextIndex);
-    window.location.href = links[index];
+
+    // 延迟 1.5 秒后跳转
+    setTimeout(() => {
+      window.location.href = links[index];
+    }, 1500);
   </script>
 </head>
 <body>
-  <p>Redirecting, please wait...</p>
+  <p>Redirecting to WhatsApp group... Please wait.</p>
 </body>
 </html>
